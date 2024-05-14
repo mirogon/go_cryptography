@@ -3,6 +3,7 @@ package cryptography
 import (
 	"fmt"
 	"math/rand"
+	"strconv"
 	"time"
 
 	util "github.com/mirogon/go_util"
@@ -41,4 +42,8 @@ func (crypto CryptographerImpl) GenerateUniqueId() uint64 {
 	timePart = timePart & 0x000fffff
 	lastPart := rand.Uint32()
 	return uint64(timePart)<<32 | uint64(lastPart)
+}
+
+func (crypto CryptographerImpl) GenerateUniqueIdStr() string {
+	return strconv.FormatInt(int64(crypto.GenerateUniqueId()), 10)
 }

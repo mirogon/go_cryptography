@@ -26,3 +26,7 @@ func (crypto DebugCryptographer) GenerateRandomConfirmationCode() string {
 func (crypto DebugCryptographer) GenerateUniqueId() uint64 {
 	return uint64(10)
 }
+
+func (crypto DebugCryptographer) GenerateUniqueIdStr() string {
+	return "10"
+}

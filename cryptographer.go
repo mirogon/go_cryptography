@@ -12,6 +12,7 @@ type Cryptographer interface {
 	SaltAndHashPasswordWithSalt(pwRaw string, salt string) string
 	GenerateRandomConfirmationCode() string
 	GenerateUniqueId() uint64
+	GenerateUniqueIdStr() string
 }
 
 // Result is double the length because of the hex conversion
